@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>Zulip — organized team chat</title>
+  <title>Zulip plans and pricing</title>
   <!--   favicon -->
- 
+
 
   <!-- font docs  https://developers.google.com/fonts/docs/css2 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,13 +17,13 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link href="plans.css" rel="stylesheet" type="text/css" />
 </head>
-<script>
 
+<!-- menu related js -->
+<script>
   function onTopMenuTabUnselectClick() {
     document.getElementById('top-menu__tab-close').checked = true;
     onTabMenuSelectionChange();
   }
-
   function onTabMenuSelectionChange(event) {
     if (!event) {
       document.getElementById('top-menu__submenu-backdrop').style.height = '0px';
@@ -36,7 +36,6 @@
       document.getElementById('top-menu__submenu-backdrop').style.height = undefined
     }
   }
-
   function onTopMobileMenuToggle(event) {
     if (event.target.open) {
       document.body.classList.add('_full-height-no-scroll')
@@ -44,13 +43,7 @@
       document.body.classList.remove('_full-height-no-scroll')
     }
   }
-
 </script>
-
-<!-- 
-  - Separate menu
-  - create a base for a page, learn about <main>
- -->
 
 <body>
   <div class='body-bg'>
@@ -295,16 +288,73 @@
     </div>
   </details>
 
-
-
-
+  <!-- Plans -->
   <main>
     <h1>Pricing</h1>
     <div class='h1-subheader'>
-      You can <a href="https://zulip.com/help/zulip-cloud-or-self-hosting">move freely</a> between could and your own servers
-      with our high quality <a href="https://zulip.com/help/export-your-organization">export</a> and <a href="https://zulip.readthedocs.io/en/stable/production/export-and-import.html">import</a> tools
+      You can <a href="https://zulip.com/help/zulip-cloud-or-self-hosting">move freely</a> between could and your own
+      servers
+      with our high quality <a href="https://zulip.com/help/export-your-organization">export</a> and <a
+        href="https://zulip.readthedocs.io/en/stable/production/export-and-import.html">import</a> tools
     </div>
-   
+
+    <div class="pricing-tab-buttons">
+      <div class="pricing-tab-button _active" tabindex="0" id="button_cloud_pricing">
+        <h2 class="pricing-tab-button-title">Cloud</h2>
+        <div class="pricing-tab-button-desc">Always updated to the latest version of Zulip.<br>
+          Simple managed solution, with no setup or maintenance.</div>
+        <hr class="pricing-tab-button-separator">
+      </div>
+      <div class="pricing-tab-button" tabindex="0" id="button_selfhosted_pricing">
+        <h2 class="pricing-tab-button-title">Self-hosted</h2>
+        <div class="pricing-tab-button-desc">Retain full control over your data and simplify compliance by self-hosting.
+          Customize Zulip for all your needs.</div>
+        <hr class="pricing-tab-button-separator">
+      </div>
+    </div>
+    <div class="pricing-tabs">
+      <div class="pricing-tab _active" id="tab_cloud_pricing">
+        <div class="plan-section">
+          <h4>Free</h4>
+          <ul>
+            <li><a href="https://zulip.com/features/">Full-featured</a> team chat service</li>
+            <li>Hundreds of <a href="https://zulip.com/integrations/">integrations</a></li>
+            <li>10,000 messages of <a href="https://zulip.com/help/search-for-messages">search history</a></li>
+            <li>File storage up to 5 GB total</li>
+            <li>Advanced <a href="https://zulip.com/help/roles-and-permissions/">roles</a> and <a
+                href="https://zulip.com/help/stream-permissions">permissions</a></li>
+            <li><a
+                href="https://zulip.com/help/roles-and-permissions#:~:text=full%20members.-,Guest,-%3A%20Can%20only%20view">Guest</a>
+              accounts</li>
+            <li>Custom <a href="https://zulip.com/help/custom-profile-fields"></a>profile fields</a></li>
+            <li>Variety of auth methods: email, Google, GitHub, GitLab, SAML</li>
+          </ul>
+        </div>
+        <hr class="plan-section-separator">
+        <div class="plan-section">
+          <h4>Standard</h4>
+        </div>
+        <hr class="plan-section-separator">
+        <div class="plan-section">
+          <h4>Plus</h4>
+        </div>
+        <hr class="plan-section-separator">
+        <div class="plan-section">
+          <h4>Premium</h4>
+        </div>
+      </div>
+      <div class="pricing-tab" id="tab_selfhosted_pricing">
+        <div class="plan-section">
+          <h4>Free</h4>
+        </div>
+        <hr class="plan-section-separator">
+        <div class="plan-section">
+          <h4>Enterprise</h4>
+        </div>
+      </div>
+    </div>
+
+
   </main>
 
 
@@ -407,7 +457,57 @@
   </footer>
 
 
-  <script src="script.js"></script>
+  <!-- plans related js -->
+  <script>
+    function activatePricing(plan) { //selfhosted | cloud
+      const buttonCloud = document.getElementById('button_cloud_pricing')
+      const tabCloud = document.getElementById('tab_cloud_pricing')
+      const buttonSelfhosted = document.getElementById('button_selfhosted_pricing')
+      const tabSelfhosted = document.getElementById('tab_selfhosted_pricing')
+
+      if (plan === 'selfhosted') {
+        buttonCloud.classList.remove('_active')
+        tabCloud.classList.remove('_active')
+        buttonSelfhosted.classList.add('_active')
+        tabSelfhosted.classList.add('_active')
+      } else {
+        buttonSelfhosted.classList.remove('_active')
+        tabSelfhosted.classList.remove('_active')
+        buttonCloud.classList.add('_active')
+        tabCloud.classList.add('_active')
+      }
+    }
+    const activateCloudPricing = () => activatePricing('cloud')
+    const activateSelfhostedPricing = () => activatePricing('selfhosted')
+
+    const urlHash = window.location.hash.substring(1)
+    if (urlHash.includes('self') || urlHash.includes('hosted')) {
+      activatePricing('selfhosted')
+    }
+
+    function onTabButtonClick(event) {
+      if (event.currentTarget.id.includes('selfhosted')) activateSelfhostedPricing()
+      else activateCloudPricing()
+    }
+    function keyEventIsClick(event) {
+      return event.code == 'Enter' || event.code == 'Space'
+    }
+    function onTabButtonKeydownClick(event) {
+      if (keyEventIsClick(event)) {
+        event.preventDefault()
+        if (event.currentTarget.id.includes('selfhosted')) activateSelfhostedPricing()
+        else activateCloudPricing()
+      }
+    }
+
+    const tabButtons = document.querySelectorAll('.pricing-tab-button')
+    tabButtons.forEach(tabButton => {
+      tabButton.addEventListener('click', onTabButtonClick)
+      tabButton.addEventListener('keydown', onTabButtonKeydownClick)
+    })
+
+
+  </script>
 </body>
 
 </html>
