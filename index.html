@@ -333,14 +333,43 @@
         <hr class="plan-section-separator">
         <div class="plan-section">
           <h4>Standard</h4>
+          <ul>
+            <li>All features of the Free plan</li>
+            <li><b>Unlimited</b> search history</li>
+            <li>File storage up to <b>10 GB per user</b></li>
+            <li>Message <a href="https://resultux.zulipchat.com/help/message-retention-policy">retention policy</a></li>
+            <li>Brand the app with <b>your logotype</b></li>
+            <li><b>Priority</b> commercial support</li>
+            <li>Allow <a href="https://zulip.com/help/public-access-option">read-only access</a> to unauthorized visitors</li>
+            <li><b>Supports</b> the open source version</li>
+          </ul>
         </div>
         <hr class="plan-section-separator">
         <div class="plan-section">
           <h4>Plus</h4>
+          <ul>
+            <li>All features of the Free plan</li>
+            <li><b>Unlimited</b> search history</li>
+            <li>File storage up to <b>10 GB per user</b></li>
+            <li>Message <a href="https://resultux.zulipchat.com/help/message-retention-policy">retention policy</a></li>
+            <li>Brand the app with <b>your logotype</b></li>
+            <li><b>Priority</b> commercial support</li>
+            <li>Allow <a href="https://zulip.com/help/public-access-option">read-only access</a> to unauthorized visitors</li>
+            <li><b>Supports</b> the open source version</li>
+          </ul>
         </div>
         <hr class="plan-section-separator">
         <div class="plan-section">
           <h4>Premium</h4>
+          <ul>
+            <li>All features of the Standard plan</li>
+            <li><a>Stream groups</a></li>
+            <li>File storage up to <b>50 GB per user</b></li>
+            <li>Single file upload limit <b>up to 4 GB</b></li>
+            <li><a href="https://zulip.com/help/saml-authentication">SAML authentication</a></li>
+            <li><a href="https://zulip.com/help/scim#scim-provisioning">SCIM provisioning</a></li>
+            <li>Custom domain</li>
+          </ul>
         </div>
       </div>
       <div class="pricing-tab" id="tab_selfhosted_pricing">
@@ -470,11 +499,13 @@
         tabCloud.classList.remove('_active')
         buttonSelfhosted.classList.add('_active')
         tabSelfhosted.classList.add('_active')
+        history.pushState({}, '', '#selfhosted');
       } else {
         buttonSelfhosted.classList.remove('_active')
         tabSelfhosted.classList.remove('_active')
         buttonCloud.classList.add('_active')
         tabCloud.classList.add('_active')
+        history.pushState({}, '', '#cloud');
       }
     }
     const activateCloudPricing = () => activatePricing('cloud')
