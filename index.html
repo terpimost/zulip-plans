@@ -298,88 +298,201 @@
         href="https://zulip.readthedocs.io/en/stable/production/export-and-import.html">import</a> tools
     </div>
 
-    <div class="pricing-tab-buttons">
-      <div class="pricing-tab-button _active" tabindex="0" id="button_cloud_pricing">
-        <h2 class="pricing-tab-button-title">Cloud</h2>
-        <div class="pricing-tab-button-desc">Always updated to the latest version of Zulip.<br>
-          Simple managed solution, with no setup or maintenance.</div>
-        <hr class="pricing-tab-button-separator">
-      </div>
-      <div class="pricing-tab-button" tabindex="0" id="button_selfhosted_pricing">
-        <h2 class="pricing-tab-button-title">Self-hosted</h2>
-        <div class="pricing-tab-button-desc">Retain full control over your data and simplify compliance by self-hosting.
-          Customize Zulip for all your needs.</div>
-        <hr class="pricing-tab-button-separator">
+    <div class="pricing-tab-buttons-wrapper">
+      <div class="pricing-tab-buttons">
+        <div class="pricing-tab-button _active" tabindex="0" id="button_cloud_pricing">
+          <h2 class="pricing-tab-button-title">Cloud</h2>
+          <div class="pricing-tab-button-desc">Always updated to the latest version of Zulip.<br>
+            Simple managed solution, with no setup or maintenance.</div>
+          <hr class="pricing-tab-button-separator">
+        </div>
+        <div class="pricing-tab-button" tabindex="0" id="button_selfhosted_pricing">
+          <h2 class="pricing-tab-button-title">Self-hosted</h2>
+          <div class="pricing-tab-button-desc">Retain full control over your data and simplify compliance by
+            self-hosting.
+            Customize Zulip for all your needs.</div>
+          <hr class="pricing-tab-button-separator">
+        </div>
       </div>
     </div>
-    <div class="pricing-tabs">
-      <div class="pricing-tab _active" id="tab_cloud_pricing">
-        <div class="plan-section">
-          <h4>Free</h4>
-          <ul>
-            <li><a href="https://zulip.com/features/">Full-featured</a> team chat service</li>
-            <li>Hundreds of <a href="https://zulip.com/integrations/">integrations</a></li>
-            <li>10,000 messages of <a href="https://zulip.com/help/search-for-messages">search history</a></li>
-            <li>File storage up to 5 GB total</li>
-            <li>Advanced <a href="https://zulip.com/help/roles-and-permissions/">roles</a> and <a
-                href="https://zulip.com/help/stream-permissions">permissions</a></li>
-            <li><a
-                href="https://zulip.com/help/roles-and-permissions#:~:text=full%20members.-,Guest,-%3A%20Can%20only%20view">Guest</a>
-              accounts</li>
-            <li>Custom <a href="https://zulip.com/help/custom-profile-fields"></a>profile fields</a></li>
-            <li>Variety of auth methods: email, Google, GitHub, GitLab, SAML</li>
-          </ul>
+    <div class="pricing-tabs-wrapper">
+      <div id="plans-left-button">
+        <div class="plans-scroll-left-btn"><i class="icon icon-chevron-left"></i></div>
+      </div>
+      <div class="pricing-tabs">
+        <div class="pricing-tab _active" id="tab_cloud_pricing">
+          <div class="plan-section">
+            <h4>Free</h4>
+            <ul>
+              <li><a href="https://zulip.com/features/">Full-featured</a> team chat service</li>
+              <li>Hundreds of <a href="https://zulip.com/integrations/">integrations</a></li>
+              <li>10,000 messages of <a href="https://zulip.com/help/search-for-messages">search history</a></li>
+              <li>File storage up to 5 GB total</li>
+              <li>Advanced <a href="https://zulip.com/help/roles-and-permissions/">roles</a> and <a
+                  href="https://zulip.com/help/stream-permissions">permissions</a></li>
+              <li><a
+                  href="https://zulip.com/help/roles-and-permissions#:~:text=full%20members.-,Guest,-%3A%20Can%20only%20view">Guest</a>
+                accounts</li>
+              <li>Custom <a href="https://zulip.com/help/custom-profile-fields"></a>profile fields</a></li>
+              <li>Variety of auth methods: email, Google, GitHub, GitLab, SAML</li>
+            </ul>
+            <div class="current-plan-button">
+              <i class="icon current-plan-icon"></i>
+              <span class="neworg-button-label">Your current plan</span>
+            </div>
+            <a class="neworg-button" href="https://zulip.com/new/">
+              <!-- <span class="neworg-button-label">Create Organization</span> -->
+              Create Organization
+            </a>
+          </div>
+          <hr class="plan-section-separator">
+          <div class="plan-section">
+            <h4>Standard</h4>
+            <ul>
+              <li>All features of the Free plan</li>
+              <li><b>Unlimited</b> search history</li>
+              <li>File storage up to <b>10 GB per user</b></li>
+              <li>Message <a href="https://resultux.zulipchat.com/help/message-retention-policy">retention policy</a>
+              </li>
+              <li>Brand the app with <b>your logotype</b></li>
+              <li><b>Priority</b> commercial support</li>
+              <li>Allow <a href="https://zulip.com/help/public-access-option">read-only access</a> to unauthorized
+                visitors</li>
+              <li><b>Supports</b> the open source version</li>
+            </ul>
+            <a class="upgrade-button" href="https://zulip.com/upgrade/">
+              <div class="upgrade-button-info">
+                <div class="upgrade-button-info-label">Upgrade to Standard</div>
+                <div class="upgrade-button-info-cost">$6.67</div>
+              </div>
+              <div class="upgrade-button-desc">
+                <div class="upgrade-button-desc-label">annual billing</div>
+                <div class="upgrade-button-desc-cost">/user/month</div>
+              </div>
+            </a>
+            <a class="upgrade-button" href="https://zulip.com/upgrade/">
+              <div class="upgrade-button-info">
+                <div class="upgrade-button-info-label">Upgrade to Standard</div>
+                <div class="upgrade-button-info-cost">$8</div>
+              </div>
+              <div class="upgrade-button-desc">
+                <div class="upgrade-button-desc-label">monthly billing</div>
+                <div class="upgrade-button-desc-cost">/user/month</div>
+              </div>
+            </a>
+          </div>
+          <hr class="plan-section-separator">
+          <div class="plan-section">
+            <h4>Plus</h4>
+            <ul>
+              <li>All features of the Free plan</li>
+              <li><b>Unlimited</b> search history</li>
+              <li>File storage up to <b>10 GB per user</b></li>
+              <li>Message <a href="https://resultux.zulipchat.com/help/message-retention-policy">retention policy</a>
+              </li>
+              <li>Brand the app with <b>your logotype</b></li>
+              <li><b>Priority</b> commercial support</li>
+              <li>Allow <a href="https://zulip.com/help/public-access-option">read-only access</a> to unauthorized
+                visitors</li>
+              <li><b>Supports</b> the open source version</li>
+            </ul>
+            <a class="upgrade-button" href="https://zulip.com/upgrade/">
+              <div class="upgrade-button-info">
+                <div class="upgrade-button-info-label">Upgrade to Plus</div>
+                <div class="upgrade-button-info-cost">$6.67</div>
+              </div>
+              <div class="upgrade-button-desc">
+                <div class="upgrade-button-desc-label">annual billing</div>
+                <div class="upgrade-button-desc-cost">/user/month</div>
+              </div>
+            </a>
+            <a class="upgrade-button" href="https://zulip.com/upgrade/">
+              <div class="upgrade-button-info">
+                <div class="upgrade-button-info-label">Upgrade to Plus</div>
+                <div class="upgrade-button-info-cost">$8</div>
+              </div>
+              <div class="upgrade-button-desc">
+                <div class="upgrade-button-desc-label">monthly billing</div>
+                <div class="upgrade-button-desc-cost">/user/month</div>
+              </div>
+            </a>
+          </div>
+          <hr class="plan-section-separator">
+          <div class="plan-section">
+            <h4>Premium</h4>
+            <ul>
+              <li>All features of the Standard plan</li>
+              <li><a>Stream groups</a></li>
+              <li>File storage up to <b>50 GB per user</b></li>
+              <li>Single file upload limit <b>up to 4 GB</b></li>
+              <li><a href="https://zulip.com/help/saml-authentication">SAML authentication</a></li>
+              <li><a href="https://zulip.com/help/scim#scim-provisioning">SCIM provisioning</a></li>
+              <li>Custom domain</li>
+            </ul>
+            <a class="upgrade-button" href="https://zulip.com/upgrade/">
+              <div class="upgrade-button-info">
+                <div class="upgrade-button-info-label">Upgrade to Premium</div>
+                <div class="upgrade-button-info-cost">$10</div>
+              </div>
+              <div class="upgrade-button-desc">
+                <div class="upgrade-button-desc-label">annual billing</div>
+                <div class="upgrade-button-desc-cost">/user/month</div>
+              </div>
+            </a>
+            <a class="upgrade-button" href="https://zulip.com/upgrade/">
+              <div class="upgrade-button-info">
+                <div class="upgrade-button-info-label">Upgrade to Premium</div>
+                <div class="upgrade-button-info-cost">$12</div>
+              </div>
+              <div class="upgrade-button-desc">
+                <div class="upgrade-button-desc-label">monthly billing</div>
+                <div class="upgrade-button-desc-cost">/user/month</div>
+              </div>
+            </a>
+          </div>
         </div>
-        <hr class="plan-section-separator">
-        <div class="plan-section">
-          <h4>Standard</h4>
-          <ul>
-            <li>All features of the Free plan</li>
-            <li><b>Unlimited</b> search history</li>
-            <li>File storage up to <b>10 GB per user</b></li>
-            <li>Message <a href="https://resultux.zulipchat.com/help/message-retention-policy">retention policy</a></li>
-            <li>Brand the app with <b>your logotype</b></li>
-            <li><b>Priority</b> commercial support</li>
-            <li>Allow <a href="https://zulip.com/help/public-access-option">read-only access</a> to unauthorized visitors</li>
-            <li><b>Supports</b> the open source version</li>
-          </ul>
-        </div>
-        <hr class="plan-section-separator">
-        <div class="plan-section">
-          <h4>Plus</h4>
-          <ul>
-            <li>All features of the Free plan</li>
-            <li><b>Unlimited</b> search history</li>
-            <li>File storage up to <b>10 GB per user</b></li>
-            <li>Message <a href="https://resultux.zulipchat.com/help/message-retention-policy">retention policy</a></li>
-            <li>Brand the app with <b>your logotype</b></li>
-            <li><b>Priority</b> commercial support</li>
-            <li>Allow <a href="https://zulip.com/help/public-access-option">read-only access</a> to unauthorized visitors</li>
-            <li><b>Supports</b> the open source version</li>
-          </ul>
-        </div>
-        <hr class="plan-section-separator">
-        <div class="plan-section">
-          <h4>Premium</h4>
-          <ul>
-            <li>All features of the Standard plan</li>
-            <li><a>Stream groups</a></li>
-            <li>File storage up to <b>50 GB per user</b></li>
-            <li>Single file upload limit <b>up to 4 GB</b></li>
-            <li><a href="https://zulip.com/help/saml-authentication">SAML authentication</a></li>
-            <li><a href="https://zulip.com/help/scim#scim-provisioning">SCIM provisioning</a></li>
-            <li>Custom domain</li>
-          </ul>
+        <div class="pricing-tab two-plans" id="tab_selfhosted_pricing">
+          <div class="plan-section">
+            <h4>Free</h4>
+            <ul>
+              <li><a href="https://zulip.com/features/">Full-featured</a> team chat service</li>
+              <li>Hundreds of <a href="https://zulip.com/integrations/">integrations</a></li>
+              <li>10,000 messages of <a href="https://zulip.com/help/search-for-messages">search history</a></li>
+              <li>File storage up to 5 GB total</li>
+              <li>Advanced <a href="https://zulip.com/help/roles-and-permissions/">roles</a> and <a
+                  href="https://zulip.com/help/stream-permissions">permissions</a></li>
+              <li><a
+                  href="https://zulip.com/help/roles-and-permissions#:~:text=full%20members.-,Guest,-%3A%20Can%20only%20view">Guest</a>
+                accounts</li>
+              <li>Custom <a href="https://zulip.com/help/custom-profile-fields"></a>profile fields</a></li>
+              <li>Variety of auth methods: email, Google, GitHub, GitLab, SAML</li>
+            </ul>
+            <a class="neworg-button" href="https://zulip.com/new/">
+              <!-- <span class="neworg-button-label">Create Organization</span> -->
+              Self-host Zulip
+            </a>
+          </div>
+          <hr class="plan-section-separator">
+          <div class="plan-section">
+            <h4>Enterprise</h4>
+            <ul>
+              <li>All features of the Standard plan</li>
+              <li><a>Stream groups</a></li>
+              <li>File storage up to <b>50 GB per user</b></li>
+              <li>Single file upload limit <b>up to 4 GB</b></li>
+              <li><a href="https://zulip.com/help/saml-authentication">SAML authentication</a></li>
+              <li><a href="https://zulip.com/help/scim#scim-provisioning">SCIM provisioning</a></li>
+              <li>Custom domain</li>
+            </ul>
+            <a class="neworg-button" href="https://zulip.com/new/">
+              <!-- <span class="neworg-button-label">Create Organization</span> -->
+              Contact Sales
+            </a>
+          </div>
         </div>
       </div>
-      <div class="pricing-tab" id="tab_selfhosted_pricing">
-        <div class="plan-section">
-          <h4>Free</h4>
-        </div>
-        <hr class="plan-section-separator">
-        <div class="plan-section">
-          <h4>Enterprise</h4>
-        </div>
+      <div id="plans-right-button">
+        <div class="plans-scroll-right-btn"><i class="icon icon-chevron-right"></i></div>
       </div>
     </div>
 
@@ -537,6 +650,25 @@
       tabButton.addEventListener('keydown', onTabButtonKeydownClick)
     })
 
+    function onPlansScrollLeft() {
+      const sectionWidth = document.querySelector('.pricing-tab._active .plan-section')?.clientWidth - 12
+      document.querySelector('.pricing-tabs').scrollBy({
+        top: 0,
+        left: -sectionWidth,
+        behavior: 'smooth'
+      })
+    }
+    document.getElementById('plans-left-button').addEventListener('click', onPlansScrollLeft)
+
+    function onPlansScrollRight() {
+      const sectionWidth = document.querySelector('.pricing-tab._active .plan-section')?.clientWidth - 12
+      document.querySelector('.pricing-tabs').scrollBy({
+        top: 0,
+        left: sectionWidth,
+        behavior: 'smooth'
+      })
+    }
+    document.getElementById('plans-right-button').addEventListener('click', onPlansScrollRight)
 
   </script>
 </body>
