@@ -650,25 +650,44 @@
       tabButton.addEventListener('keydown', onTabButtonKeydownClick)
     })
 
+    const pricing_tabs = document.querySelector('.pricing-tabs')
     function onPlansScrollLeft() {
       const sectionWidth = document.querySelector('.pricing-tab._active .plan-section')?.clientWidth - 12
-      document.querySelector('.pricing-tabs').scrollBy({
+      pricing_tabs.scrollBy({
         top: 0,
         left: -sectionWidth,
         behavior: 'smooth'
       })
     }
-    document.getElementById('plans-left-button').addEventListener('click', onPlansScrollLeft)
+    const plans_left_button = document.getElementById('plans-left-button')
+    plans_left_button.addEventListener('click', onPlansScrollLeft)
 
     function onPlansScrollRight() {
       const sectionWidth = document.querySelector('.pricing-tab._active .plan-section')?.clientWidth - 12
-      document.querySelector('.pricing-tabs').scrollBy({
+      pricing_tabs.scrollBy({
         top: 0,
         left: sectionWidth,
         behavior: 'smooth'
       })
     }
-    document.getElementById('plans-right-button').addEventListener('click', onPlansScrollRight)
+    const plans_right_button = document.getElementById('plans-right-button')
+    plans_right_button.addEventListener('click', onPlansScrollRight)
+
+    function onPlansScroll() {
+      if (pricing_tabs.scrollLeft <= 8) {
+        plans_left_button.classList.add('_hidden')
+      } else {
+        plans_left_button.classList.remove('_hidden')
+      }
+
+      if (pricing_tabs.scrollLeft <= pricing_tabs.scrollWidth - pricing_tabs.clientWidth - 8) {
+        plans_right_button.classList.remove('_hidden')
+      } else {
+        plans_right_button.classList.add('_hidden')
+      }
+    }
+    onPlansScroll()
+    pricing_tabs.addEventListener('scroll', onPlansScroll)
 
   </script>
 </body>

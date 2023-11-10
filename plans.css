@@ -575,6 +575,10 @@ a.neworg-button:active {
     #plans-right-button {
         display: block;
     }
+    #plans-left-button._hidden,
+    #plans-right-button._hidden{
+        display: none;
+    }
 
 }
 
