@@ -541,6 +541,15 @@ a.neworg-button:active {
     .current-plan-button {
         height: 52px;
     }
+
+    #plans-left-button,
+    #plans-right-button {
+        display: block;
+    }
+    #plans-left-button._hidden,
+    #plans-right-button._hidden{
+        display: none;
+    }
 }
 
 @media (max-width: 940px) {
@@ -570,16 +579,6 @@ a.neworg-button:active {
         margin-bottom: 12px;
         font-size: 22px;
     }
-
-    #plans-left-button,
-    #plans-right-button {
-        display: block;
-    }
-    #plans-left-button._hidden,
-    #plans-right-button._hidden{
-        display: none;
-    }
-
 }
 
 @media (max-width: 700px) {
