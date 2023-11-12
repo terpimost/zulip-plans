@@ -181,7 +181,17 @@ h1 {
     padding: 0 16px 0 16px;
     text-align: center;
     overflow-x: auto;
-
+}
+/* hiding scrollbar since we have buttons
+regular scrolling would still work */
+/* Hide scrollbar for Chrome, Safari and Opera */
+.pricing-tabs::-webkit-scrollbar {
+    display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.pricing-tabs {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
 
 .pricing-tab {
@@ -201,6 +211,9 @@ h1 {
     display: flex;
     justify-content: space-evenly;
 }
+.pricing-tab.two-plans{
+    max-width: 960px;
+}
 
 .plan-section-separator {
     border: 0;
@@ -216,7 +229,7 @@ h1 {
 }
 
 .two-plans .plan-section {
-    max-width: 400px;
+    max-width: 332px;
 }
 
 .plan-section h4 {
