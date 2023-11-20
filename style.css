@@ -754,75 +754,8 @@ footer a:hover{
   body{
     background: hsl(209deg 63% 40%);
   }
-  .body-bg__layer {
-    background: linear-gradient(180deg, hsl(209deg 63% 40%) 30%, hsl(238deg 28% 21%) 70%);
-  }
-  .screen-1{
-    background: linear-gradient(180deg, hsl(209deg 63% 40%) 0%, hsl(210deg 55% 56%) 100%);
-  }
-  .appshot-1__img {
-    box-shadow: 0px 0px 70px hsl(209deg 100% 24%);
-  }
-  .cta-buttons a {
-    background: hsl(216deg 90% 65%);
-  }
-  .cta-buttons a:hover{
-    background: hsl(216deg 100% 63%);
-    box-shadow: 0px 0px 1px #000000, 0px 0px 16px rgb(0 123 252);
-  }
-  .cta-buttons a:active{
-    background: hsl(216deg 100% 60%);
-    box-shadow: 0px 0px 1px #000000, 0px 0px 12px rgb(0 123 252);
-  }
-
-  .screen-2{
-    background: linear-gradient(180deg, hsl(234deg 56% 53%) 0%, hsl(223deg 51% 55%) 100%);
-  }
-  .appshot-2__img {
-    box-shadow: 0px 0px 70px rgb(0 10 93 / 74%);
-  }
-  .screen-2 .quote__text {
-    background: hsl(227deg 60% 80%);
-  }
-  .screen-3{
-    background: linear-gradient(180deg, hsl(245deg 56% 51%) 0%, hsl(275deg 45% 53%) 100%);
-  }
-  .appshot-3-1__img, .appshot-3-2__img {
-    box-shadow: 0px 0px 42px hsl(252deg 100% 5% / 28%)
-  }
-  .screen-3 .quote__text {
-    background: hsl(255deg 52% 83%);
-  }
-  .screen-4 {
-    background: linear-gradient(180deg, hsl(263deg 56% 39%) 0%, hsl(347deg 35% 57%) 100%);
-  }
-  .screen-5 {
-    background: linear-gradient(180deg, hsl(242deg 48% 35%) 0%, hsl(274deg 46% 45%) 99.36%);
-  }
-  .screen-5 .quote__text {
-    background: hsl(255deg 52% 80%);
-  }
   footer {
     background: hsl(238deg 28% 21%);
   }
 }
 
-@media (max-width: 940px) and (prefers-color-scheme: dark){
-  .cta-buttons a,
-  .cta-buttons a:hover,
-  .cta-buttons a:active{
-    box-shadow: none;
-  }
-  .cta-buttons a{
-    background: hsl(216deg 49% 36%);
-  }
-  .cta-buttons a:hover{
-    background: hsl(216deg 75% 34%);  
-  }
-  .cta-buttons a:active{
-    background: hsl(215deg 81% 28%);
-  }
-  .screen-4__tags a {
-    background: hsl(263deg 55% 56% / 88%);
-  }
-}
