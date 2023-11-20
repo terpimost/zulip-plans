@@ -359,6 +359,7 @@ regular scrolling would still work */
 
 a.btn--att_high--int_info,
 a.btn--att_high--int_success,
+a.btn--att_medium--int_success,
 a.btn--att_low--int_success {
     display: flex;
     gap: 0.5ch;
@@ -380,12 +381,10 @@ a.btn--att_high--int_info {
     background-color: hsl(219, 62%, 54%);
     color: white;
 }
-
 a.btn--att_high--int_info:hover {
     background-color: hsl(219, 62%, 50%);
     color: white;
 }
-
 a.btn--att_high--int_info:active {
     background-color: hsl(219, 62%, 46%);
     color: white;
@@ -395,30 +394,39 @@ a.btn--att_high--int_success {
     background-color: hsla(146, 92%, 26%, 1);
     color: white;
 }
-
 a.btn--att_high--int_success:hover {
     background-color: hsla(146, 92%, 24%, 1);
     color: white;
 }
-
 a.btn--att_high--int_success:active {
     background-color: hsla(146, 93%, 22%, 1);
     color: white;
 }
 
+a.btn--att_medium--int_success {
+    background-color: hsla(152, 79%, 24%, 0.1);
+    color: hsla(147, 57%, 25%, 1);
+}
+a.btn--att_medium--int_success:hover {
+    background-color: hsla(146, 92%, 24%, 0.15);
+    color: hsla(147, 57%, 25%, 1);
+}
+a.btn--att_medium--int_success:active {
+    background-color: hsla(146, 93%, 22%, 0.19);
+    color: hsla(147, 57%, 25%, 1);
+}
+
 a.btn--att_low--int_success {
     background-color: hsla(147, 51%, 50%, 0);
-    color: hsla(147, 80%, 29%, 1);
+    color: hsla(147, 57%, 25%, 1);
 }
-
 a.btn--att_low--int_success:hover {
-    background-color: hsla(147, 51%, 50%, 0.1);
-    color: hsla(147, 80%, 29%, 1);
+    background-color: hsla(152, 79%, 24%, 0.14);
+    color: hsla(147, 57%, 25%, 1);
 }
-
 a.btn--att_low--int_success:active {
-    background-color: hsla(147, 51%, 50%, 0.17);
-    color: hsla(147, 80%, 29%, 1);
+    background-color: hsla(152, 79%, 24%, 0.17);
+    color: hsla(147, 57%, 25%, 1);
 }
 
 
@@ -523,11 +531,14 @@ a.btn--att_low--int_success:active {
 
 .pricing-appendix-wrapper {
     margin-top: 38px;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     gap: 32px;
     justify-content: center;
     padding: 0 16px 0 16px;
+}
+.pricing-appendix-wrapper._active{
+    display: flex;
 }
 
 .pricing-appendix {
@@ -668,9 +679,7 @@ h5.pricing-appendix-title,
     }
 
     #plans-left-button._hidden,
-    #plans-right-button._hidden,
-    #tab_cloud_appendix._hidden,
-    #tab_selfhosted_appendix._hidden {
+    #plans-right-button._hidden {
         display: none;
     }
 }

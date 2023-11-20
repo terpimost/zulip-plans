@@ -444,9 +444,7 @@
               <li>Funds the Zulip open source project</li>
               <li>Affordable pricing depends on support required</li>
             </ul>
-            <a class="neworg-button btn--att_high--int_success" href="mailto:sales@zulip.com">
-              Contact Sales
-            </a>
+            <a class="neworg-button btn--att_high--int_info" href="mailto:sales@zulip.com">Contact Sales</a>
           </div>
         </div>
 
@@ -456,10 +454,11 @@
       </div>
     </div>
 
-    <div class="pricing-appendix-wrapper" id="tab_cloud_appendix">
+    <div class="pricing-appendix-wrapper _active" id="tab_cloud_appendix">
+      <!-- Cloud appendix -->
       <div class="pricing-appendix">
         <h5 class="pricing-appendix-title">Discounts?</h5>
-        <span class="pricing-appendix-subtitle">We sponsor hundreds of worthy organizations </span>
+        <span class="pricing-appendix-subtitle">We sponsor hundreds of worthy organizations</span>
         <div class="pricing-appendix-content">
           <h6>Standard plan for free</h6>
           <ul>
@@ -472,7 +471,7 @@
             <li><a href="https://zulip.com/for/education/">Education</a> (online or in-person)</li>
             <li><a href="https://zulip.com/for/communities/">Non profits and communities</a></li>
           </ul>
-          <a class="sponsorship-button btn--att_high--int_success" href="https://zulip.com/accounts/go/?next=%2Fsponsorship%2F">
+          <a class="sponsorship-button btn--att_medium--int_success" href="https://zulip.com/accounts/go/?next=%2Fsponsorship%2F">
             Request for sponsorship
           </a>
           <div class="sponsorship-button-desc">If you don’t have Zulip account yet contact us via <a href="mailto:contact@zulip.com">contact@zulip.com</a></div>
@@ -498,8 +497,47 @@
       </div>
     </div>
     
-    <div class="pricing-appendix-wrapper _hidden" id="tab_selfhosted_appendix">
-      
+    <div class="pricing-appendix-wrapper" id="tab_selfhosted_appendix">
+      <!-- Self hosted appendix -->
+      <div class="pricing-appendix">
+        <h5 class="pricing-appendix-title">Discounts?</h5>
+        <span class="pricing-appendix-subtitle">We sponsor hundreds of worthy organizations</span>
+        <div class="pricing-appendix-content">
+          <h6>Community plan</h6>
+          <ul>
+            <li><a href="https://zulip.com/for/open-source/">Open source projects</a></li>
+            <li><a href="https://zulip.com/for/research/">Research group or department</a></li>
+            <li><a href="https://zulip.com/for/events/">Academic conferences and most other non-profit events</a></li>
+          </ul>
+          <h6>Business plan with 85% discount</h6>
+          <ul>
+            <li><a href="https://zulip.com/for/education/">Education</a> (online or in-person)</li>
+            <li><a href="https://zulip.com/for/communities/">Non profits and communities</a></li>
+          </ul>
+          <a class="sponsorship-button btn--att_medium--int_success" href="https://zulip.com/accounts/go/?next=%2Fsponsorship%2F">
+            Request for sponsorship
+          </a>
+          <div class="sponsorship-button-desc">If you don’t have Zulip account yet contact us via <a href="mailto:contact@zulip.com">contact@zulip.com</a></div>
+        </div>
+      </div>
+      <div class="pricing-appendix">
+        <h5 class="pricing-appendix-title">Other questions?</h5>
+        <span class="pricing-appendix-subtitle">See our <a href="https://zulip.com/help/zulip-cloud-billing">billing help page</a> for additional details</span>
+        <div class="pricing-appendix-content">
+          <ul>
+            <li><a href="https://zulip.com/help/zulip-cloud-billing#differences-between-zulip-cloud-plans">Differences between Zulip Cloud plans</a></li>
+            <li><a href="https://zulip.com/help/zulip-cloud-billing#payment-methods">Payment methods</a></li>
+            <li><a href="https://zulip.com/help/zulip-cloud-billing#temporary-users-and-guests">Temporary users and guests</a></li>
+          </ul>
+          <ul>
+            <li><a href="https://zulip.com/help/migrating-from-other-chat-tools">Migrating from other chat tools</a></li>
+            <li><a href="https://zulip.com/help/trying-out-zulip">Trying out Zulip</a></li>
+          </ul>
+          <div>
+            If you have any other questions, please don't hesitate to reach out at <a href="mailto:sales@zulip.com">sales@zulip.com</a>.
+          </div>
+        </div>
+      </div>
     </div>
 
 
@@ -615,17 +653,28 @@
       const buttonSelfhosted = document.getElementById('button_selfhosted_pricing')
       const tabSelfhosted = document.getElementById('tab_selfhosted_pricing')
 
+      const tab_cloud_appendix = document.getElementById('tab_cloud_appendix')
+      const tab_selfhosted_appendix = document.getElementById('tab_selfhosted_appendix')
+
       if (plan === 'selfhosted') {
         buttonCloud.classList.remove('_active')
         tabCloud.classList.remove('_active')
+        tab_cloud_appendix.classList.remove('_active')
+
         buttonSelfhosted.classList.add('_active')
         tabSelfhosted.classList.add('_active')
+        tab_selfhosted_appendix.classList.add('_active')
+        
         history.pushState({}, '', '#selfhosted');
       } else {
         buttonSelfhosted.classList.remove('_active')
         tabSelfhosted.classList.remove('_active')
+        tab_selfhosted_appendix.classList.remove('_active')
+        
         buttonCloud.classList.add('_active')
         tabCloud.classList.add('_active')
+        tab_cloud_appendix.classList.add('_active')
+        
         history.pushState({}, '', '#cloud');
       }
     }
