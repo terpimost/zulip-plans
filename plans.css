@@ -759,6 +759,10 @@ h5.pricing-appendix-title,
 
 /* Dark theme modifications */
 @media (prefers-color-scheme: dark) {
+    body{
+        background: hsl(209deg 63% 40%);
+    }
+    
     main {
       background: linear-gradient(180deg, hsl(209deg 63% 40%) 30%, hsl(238deg 28% 50%) 100%);
     }
