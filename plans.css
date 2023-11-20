@@ -261,12 +261,14 @@ regular scrolling would still work */
     flex-direction: column;
 }
 
-.plan-section ul {
+.plan-section ul,
+.pricing-appendix-content ul {
     margin-bottom: 8px;
     flex: 1 0 0;
 }
 
-.plan-section a {
+.plan-section a,
+.pricing-appendix-content a {
     color: hsl(210, 94%, 42%);
     text-decoration: underline;
     text-underline-offset: 4px;
@@ -274,29 +276,34 @@ regular scrolling would still work */
     text-decoration-color: hsla(210, 94%, 42%, 0.3);
 }
 
-.plan-section a:hover {
+.plan-section a:hover,
+.pricing-appendix-content a:hover{
     color: hsl(210, 100%, 50%);
     text-decoration-color: hsla(210, 100%, 50%, 1);
 }
 
-.plan-section a:active {
+.plan-section a:active,
+.pricing-appendix-content a:active {
     color: hsl(210, 100%, 42%);
     text-decoration-color: hsla(210, 100%, 42%, 1);
 }
 
-.plan-section ul {
+.plan-section ul,
+.pricing-appendix-content ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-.plan-section ul li {
+.plan-section ul li,
+.pricing-appendix-content ul li {
     position: relative;
     padding-left: 16px;
     margin-bottom: 10px;
 }
 
-.plan-section ul li::before {
+.plan-section ul li::before,
+.pricing-appendix-content ul li::before {
     position: absolute;
     content: "";
     left: 0;
@@ -309,14 +316,17 @@ regular scrolling would still work */
     height: 6px;
     margin-right: 8px;
 }
-.plan-cost{
+
+.plan-cost {
     display: flex;
     align-items: start;
     font-family: var(--font-ss3);
     gap: 4px;
-    min-height: 56px;
+    /* because it could be 3 lines in some widths and we want all costs be on the same line*/
+    min-height: 56px; 
     margin-top: 24px;
 }
+
 .plan-cost-value {
     font-size: 38px;
     font-style: normal;
@@ -324,14 +334,18 @@ regular scrolling would still work */
     line-height: 100%;
     letter-spacing: -1px;
 }
-.plan-cost-desc{
+
+.plan-cost-desc {
     line-height: 17px;
     margin-top: 2px;
+    opacity: 0.8;
 }
-.plan-cost-value-alt{
+
+.plan-cost-value-alt {
     font-weight: 600;
 }
-.plan-cost-currency{
+
+.plan-cost-currency {
     opacity: 0.5;
 }
 
@@ -344,7 +358,7 @@ regular scrolling would still work */
 
 a.btn--att_high--int_info,
 a.btn--att_high--int_success,
-a.btn--att_low--int_success{
+a.btn--att_low--int_success {
     display: flex;
     gap: 0.5ch;
     align-items: center;
@@ -362,13 +376,15 @@ a.btn--att_low--int_success{
 }
 
 a.btn--att_high--int_info {
-    background-color: hsl(219, 62%, 54%);    
+    background-color: hsl(219, 62%, 54%);
     color: white;
 }
+
 a.btn--att_high--int_info:hover {
     background-color: hsl(219, 62%, 50%);
     color: white;
 }
+
 a.btn--att_high--int_info:active {
     background-color: hsl(219, 62%, 46%);
     color: white;
@@ -378,10 +394,12 @@ a.btn--att_high--int_success {
     background-color: hsla(146, 92%, 26%, 1);
     color: white;
 }
+
 a.btn--att_high--int_success:hover {
     background-color: hsla(146, 92%, 24%, 1);
     color: white;
 }
+
 a.btn--att_high--int_success:active {
     background-color: hsla(146, 93%, 22%, 1);
     color: white;
@@ -391,10 +409,12 @@ a.btn--att_low--int_success {
     background-color: hsla(147, 51%, 50%, 0);
     color: hsla(147, 80%, 29%, 1);
 }
+
 a.btn--att_low--int_success:hover {
     background-color: hsla(147, 51%, 50%, 0.1);
     color: hsla(147, 80%, 29%, 1);
 }
+
 a.btn--att_low--int_success:active {
     background-color: hsla(147, 51%, 50%, 0.17);
     color: hsla(147, 80%, 29%, 1);
@@ -500,6 +520,110 @@ a.btn--att_low--int_success:active {
     scale: 0.96;
 }
 
+.pricing-appendix-wrapper {
+    margin-top: 38px;
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    padding: 0 16px 0 16px;
+}
+
+.pricing-appendix {
+    flex: 1 1 0;
+    text-align: left;
+    font-family: var(--font-ss3);
+    max-width: 440px;
+}
+
+h5.pricing-appendix-title {
+    margin: 0;
+    font-family: var(--font-ops);
+    font-size: 30px;
+    line-height: 38px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+h5.pricing-appendix-title,
+.pricing-appendix-subtitle {
+    padding: 0 32px;
+}
+
+.pricing-appendix-subtitle {
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.pricing-appendix-subtitle a{
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: hsla(210, 94%, 100%, 0.4);
+}
+.pricing-appendix-subtitle a:hover{
+    text-decoration-color: hsla(210, 94%, 100%, 0.8);
+}
+
+.pricing-appendix-content {
+    position: relative;
+    padding: 20px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    background: hsla(210, 44%, 92%, 1);
+    color: hsl(223, 43%, 25%);
+    border-radius: 16px;
+    align-items: stretch;
+}
+
+.pricing-appendix-content::before {
+    --icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='33' height='56' fill='none' viewBox='0 0 33 56'%3e%3cpath fill='%23E2EBF4' d='M33 37 1 56C1 35-3.5 0 33 0 7.5 3 7.776 37 33 37Z'/%3e%3c/svg%3e");
+    width: 32px;
+    height: 56px;
+
+    content: '';
+    position: absolute;
+    top: -37px;
+    left: -0.5px;
+
+    display: block;
+    background-color: hsla(210, 44%, 92%, 1);
+    mask-position: center;
+    -webkit-mask-position: center;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-image: var(--icon);
+    -webkit-mask-image: var(--icon);
+    /* transition: background 100ms ease-out; */
+}
+
+.pricing-appendix-content h6 {
+    margin: 0;
+    color: #24345B;
+    font-family: var(--font-ss3);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+}
+.pricing-appendix-content ul{
+    margin-bottom: 6px;
+}
+.pricing-appendix-content ul li {
+    margin-bottom: 4px;
+}
+.sponsorship-button{
+    
+}
+.sponsorship-button-desc{
+    text-align: center;
+    opacity: 0.7;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+
 @media (max-width: 1139px) {
     .plan-section {
         padding: 0 12px;
@@ -516,16 +640,17 @@ a.btn--att_low--int_success:active {
         padding-left: 10px;
     }
 
-    .plan-cost{
+    .plan-cost {
         min-height: 48px;
         margin-top: 18px;
     }
 
-    .plan-cost-value{
+    .plan-cost-value {
         font-size: 32px;
         font-weight: 450;
     }
-    .plan-cost-desc{
+
+    .plan-cost-desc {
         margin-top: 1px;
         line-height: 15px;
     }
@@ -536,7 +661,9 @@ a.btn--att_low--int_success:active {
     }
 
     #plans-left-button._hidden,
-    #plans-right-button._hidden {
+    #plans-right-button._hidden,
+    #tab_cloud_appendix._hidden,
+    #tab_selfhosted_appendix._hidden {
         display: none;
     }
 }
