@@ -791,6 +791,9 @@ footer a:hover{
   body{
     background: hsl(209deg 63% 40%);
   }
+  .body-bg__layer {
+    background: linear-gradient(180deg,hsl(209deg 63% 40%) 30%,hsl(238deg 28% 21%) 70%);
+  }
   footer {
     background: hsl(238deg 28% 21%);
   }
