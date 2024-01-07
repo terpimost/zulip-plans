@@ -780,4 +780,14 @@ h5.pricing-appendix-title,
     .pricing-appendix-content::before{
         background-color:#dae0ed;
     }
+
+    #plans-left-button {
+        left: 0px;
+        background: linear-gradient(to right, #d5e1ed 30%, #f1f5f700 100%);
+    }
+    
+    #plans-right-button {
+        right: -1px;
+        background: linear-gradient(to right, #f1f5f700 0%, #d5e1ed 70%);
+    }
 }
